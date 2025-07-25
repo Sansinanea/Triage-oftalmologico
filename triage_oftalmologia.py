@@ -70,8 +70,8 @@ if nombre and dni and edad > 0:
             "Picazón o ardor ocular",
             "Hinchazón del párpado (como orzuelo)",
             "Pérdida de visión de menos de 72 hs",
-            "Manchas negras, telarañas o mosquitas"
-            "Derrame"
+            "Manchas negras, telarañas o mosquitas",
+            "Derrame",
             "Sensacion de cuerpo extraño o arenilla"
         ])
 
@@ -99,7 +99,7 @@ if nombre and dni and edad > 0:
         - Molestias visuales de larga data
 
         ➡️ **Debe ser derivado directamente a consultorio** (no requiere atención por guardia).
-        Recuerde completar el formulario con honestidad, el correcto funcionamiento del sistema de triage contribuye a mejorar la calidad de atención priorizando a los pacientes mas graves y cuidando los recursos del sistema publico de atencion. 
+        "Recuerde completar el formulario con honestidad, el correcto funcionamiento del sistema de triage contribuye a mejorar la calidad de atención priorizando a los pacientes mas graves y cuidando los recursos del sistema publico de atencion. 
         """)
 
     # Firma digital enfermero y fecha/hora
