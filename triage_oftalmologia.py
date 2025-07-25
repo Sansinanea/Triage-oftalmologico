@@ -9,7 +9,7 @@ def reiniciar():
 
 # Título y descripción
 st.title("👁️ Triage Oftalmológico")
-st.markdown("Aplicación para triage inicial realizado por personal de enfermería sin formación oftalmológica.")
+st.markdown("Aplicación para triage inicial realizado para personal de enfermería sin formación oftalmológica.")
 
 # Datos personales antes de empezar
 st.header("📝 Datos del paciente")
@@ -44,33 +44,35 @@ if nombre and dni and edad > 0:
     # Lógica Paso 1
     codigo_paso1 = None
     if trauma == "Sí: proyectil, alambre, metal mientras martillaba":
-        codigo_paso1 = "🟡 CÓDIGO AMARILLO"
+        codigo_paso1 = "🟡 CÓDIGO AMARILLO= Espera de 20 minutos"
     elif quimico == "Sí, gran cantidad (chorro o baldazo)":
-        codigo_paso1 = "🟡 CÓDIGO AMARILLO"
+        codigo_paso1 = "🟡 CÓDIGO AMARILLO=  Espera de 20 minutos"
     elif dolor == "Sí":
-        codigo_paso1 = "🟡 CÓDIGO AMARILLO"
+        codigo_paso1 = "🟡 CÓDIGO AMARILLO=  Espera de 20 minutos"
     elif politrauma == "Sí":
         codigo_paso1 = "🔺 Evaluar primero por emergentólogo"
     elif trauma == "Sí: esquirla de amoladora" or quimico == "Sí, una gota" or dolor == "Solo dolor leve, sin náuseas ni vómitos":
-        codigo_paso1 = "🟢 CÓDIGO VERDE"
+        codigo_paso1 = "🟢 CÓDIGO VERDE= Espera de 1 a 2 horas"
 
     if codigo_paso1:
         st.subheader(f"Resultado Paso 1: {codigo_paso1}")
 
     st.divider()
 
-    if codigo_paso1 in ["🟢 CÓDIGO VERDE", None]:
+    if codigo_paso1 in ["🟢 CÓDIGO VERDE= Espera de 1 a 2 horas", None]:
         st.header("🟢 PASO 2: Síntomas frecuentes")
 
         st.markdown("Si **NO hay síntomas de alarma en el Paso 1**, pasar al paso 2.")
 
         sintomas = st.multiselect("¿Qué síntomas presenta el paciente?", [
-            "Ojo rojo",
+            "Ojo rojo doloroso",
             "Secreción o legaña",
             "Picazón o ardor ocular",
-            "Hinazón leve del párpado (como orzuelo)",
+            "Hinchazón del párpado (como orzuelo)",
             "Pérdida de visión de menos de 72 hs",
             "Manchas negras, telarañas o mosquitas"
+            "Derrame"
+            "Sensacion de cuerpo extraño o arenilla"
         ])
 
         dias = st.slider("¿Hace cuántos días tiene el problema?", 0, 30, 1)
@@ -78,7 +80,7 @@ if nombre and dni and edad > 0:
         codigo_paso2 = None
         if sintomas:
             if dias <= 3:
-                codigo_paso2 = "🟢 CÓDIGO VERDE"
+                codigo_paso2 = "🟢 CÓDIGO VERDE= Espera de 1 a 2 horas"
             else:
                 codigo_paso2 = "📅 DERIVAR A CONSULTORIO (patología crónica)"
 
@@ -97,6 +99,7 @@ if nombre and dni and edad > 0:
         - Molestias visuales de larga data
 
         ➡️ **Debe ser derivado directamente a consultorio** (no requiere atención por guardia).
+        Recuerde completar el formulario con honestidad, el correcto funcionamiento del sistema de triage contribuye a mejorar la calidad de atención priorizando a los pacientes mas graves y cuidando los recursos del sistema publico de atencion. 
         """)
 
     # Firma digital enfermero y fecha/hora
