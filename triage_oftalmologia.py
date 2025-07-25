@@ -99,6 +99,8 @@ if nombre and dni and edad > 0:
         - Molestias visuales de larga data
 
         ➡️ **Debe ser derivado directamente a consultorio** (no requiere atención por guardia).
+       
+        
         "Recuerde completar el formulario con honestidad, el correcto funcionamiento del sistema de triage contribuye a mejorar la calidad de atención priorizando a los pacientes mas graves y cuidando los recursos del sistema publico de atencion. 
         """)
 
